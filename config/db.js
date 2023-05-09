@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 require("dotenv").config;
+mongoose.set("strictQuery", true);
 const connectDB = async () => {
-  const conn = await mongoose.connect(
-    "mongodb+srv://Waleedabid:Waleed123@cluster0.kzkfk.mongodb.net/devcamper?retryWrites=true&w=majority"
-  );
+  const conn = await mongoose.connect("mongodb://localhost:27017/devcamper");
 
   console.log(
     `Mongo DB Connected: ${conn.connection.host}`.underline.cyan.bold
